@@ -5,7 +5,7 @@
 /**
 * main - main block
 * if function - determine the last number of number n
-* Return (0): Success
+* Return: 0
 */
 
 int main(void)
@@ -18,7 +18,7 @@ int main(void)
 	if (last > 5)
 		printf("Last digit of %d is %d and is greater than 5\n", n, last);
 	else if (last == 0)
-		printf("Last digit of %d is %d 0 and is %d\n", n, last, last);
+		printf("Last digit of %d is 0 and is %d\n", n, last);
 	else if (last < 6)
 		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, last);
 	return (0);
