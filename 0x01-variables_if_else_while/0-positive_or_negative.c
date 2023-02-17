@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 /* more headers goes there */
-/* betty style doc for function main goes there */
+/*A function to check if the variable n is positive or negative or zero */
 int main(void)
 {
 	int n;
@@ -10,10 +10,10 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
-		printf("%d is positive\n", n);
+		printf("%d is positive\n   ", n);
 	else if (n < 1)
-		printf("%d negative\n", n);
+		printf("%d negative\n   ", n);
 	else
-		printf("%d is zero\n", n);
+		printf("%d is zero\n   ", n);
 	return (0);
 }
