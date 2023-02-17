@@ -1,6 +1,20 @@
 #include <stdio.h>
 /**
  * main - main block
- * while loop - printing alphabets lower and upper case
+ *loop -prints all possible combinations of single-digit numbers.
  * Return: 0
 */
+int main(void)
+{
+	for (int num = 0 ; num < 10 ; num++)
+	{
+		putchar(num + 48);
+		if (num != 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
+	putchar('\n');
+	return (0);
+}
