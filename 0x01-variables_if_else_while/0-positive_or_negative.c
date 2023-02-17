@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/* if_else - Determine if the variable n is positive or negative or zero
+/** if_else - Determine if the variable n is positive or negative or zero
 * Return (0): Success
 */
 int main(void)
