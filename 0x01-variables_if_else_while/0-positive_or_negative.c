@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 /* more headers goes there */
-/*A function to check if the variable n is positive or negative or zero */
+/*if_else function - Determine if the variable n is positive or negative or zero
+*/
 int main(void)
 {
 	int n;
