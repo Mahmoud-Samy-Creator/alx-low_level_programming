@@ -1,17 +1,21 @@
 #include "main.h"
-#include <stdio.h>
-/**
-* main - Entry point
-* Return:0
-*/
-int main(void)
-{
-	char alpha = 'a';
 
-	while (alpha <= 'z')
+/**
+ * print_alphabet - Entry point
+ * Return:0
+ */
+
+void print_alphabet(void)
+{
+	char c = 'a';
+
+	while (c <= 'z')
 	{
-		_putchar(alpha);
-		apha++;
+		_putchar(c);
+		c++;
+
 	}
-	return (0);
+	_putchar('\n');
+
 }
+

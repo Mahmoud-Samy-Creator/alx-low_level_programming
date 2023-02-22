@@ -1,18 +1,13 @@
- #include "main.h"
->
-> /**
->  * main - Entry point
->  * Return:0
->  */
 #include "main.h"
 
 /**
- * main - Entry point
- * Return:0
+ * _isalpha - check for lower case letter
+ * @c : character to check
+ * Return:0 or 1
  */
-#include "main.h"
 
-/**
- * main - Entry point
- * Return:0
- */
+int _isalpha(int c)
+{
+	return ((c >= 97 && c <= 122) || (c >= 65 && c <= 90));
+
+}
