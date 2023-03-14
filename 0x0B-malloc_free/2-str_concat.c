@@ -3,11 +3,13 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concatenates two strings
- * @s1 - pointer to first string
- * @s2 - pointer to second string
- * Return: pointer
+ * *str_concat - concatenates two strings
+ * @s1: string to concatenate
+ * @s2: other string to concatenate
+ *
+ * Return: pointer to the new string created (Success), or NULL (Error)
  */
+
 
 char *str_concat(char *s1, char *s2)
 {
@@ -20,7 +22,7 @@ char *str_concat(char *s1, char *s2)
 
 	len = strlen(s1) + strlen(s2);
 
-	new = (char *)malloc(len * sizeof(char) + 2);
+	new = (char *)malloc(len * sizeof(char) + 1);
 
 	if (new == 0)
 		return (NULL);
