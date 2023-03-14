@@ -14,22 +14,19 @@ char *_strdup(char *str)
 	char *new;
 	int len = strlen(str);
 
-	if (str == NULL || len == 0)
+	if (str == NULL)
 		return (NULL);
 
 
 	new = (char *)malloc(len * sizeof(char));
 
-	if (new == 0 || new == NULL)
+	if (new == NULL)
 	{
 		return (NULL);
 	}
 
 	else
-	{
-		while (new)
-			strcpy(new, str);
-	}
+		strcpy(new, str);
 
 	free(new);
 
