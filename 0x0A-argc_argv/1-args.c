@@ -8,8 +8,12 @@
  */
 int main(int argc, char *argv[] __attribute__((unused)))
 {
-	if (argc > 0)
-		printf("%d\n", argc - 1);
+	int i = 0;
+
+	for (i = 0 ; i < argc ; i++);
+
+	printf("%d", i);
+
 	return (0);
 }
 
