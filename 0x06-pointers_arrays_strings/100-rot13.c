@@ -19,7 +19,7 @@ char *rot13(char *s)
 			if (((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
 			&& s[i] == alpha[j])
 			{
-				s[i] = rot13[i];
+				s[i] = rot13[j];
 				break;
 			}
 		}
