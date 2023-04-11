@@ -1,24 +1,24 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * clear_bit -  Sets the value of a bit to 0 at a given index
+ * clear_bit - sets the value of a bit to 0.
+ * at a given index.
+ * @n: pointer of an unsigned long int.
+ * @index: index of the bit.
  *
- * @n: long int
- *
- * @index: unsigned int
- *
- * Return: 1 if works -1 on failure
+ * Return: 1 if it worked, -1 if it didn't.
  */
-
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int mask = 1 << index;
+	unsigned int m;
 
-		if (index < sizeof(n) * 8)
-		{
-			*n = (*n & ~mask);
-			return (1);
-		}
-
+	if (index > 63)
 		return (-1);
+
+	m = 1 << index;
+
+	if (*n & m)
+		*n ^= m;
+
+	return (1);
 }
