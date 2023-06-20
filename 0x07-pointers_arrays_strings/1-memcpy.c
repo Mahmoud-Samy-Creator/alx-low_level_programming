@@ -5,7 +5,7 @@
  *@dest: A pointer points to the destination
  *@src: A pointer points to the source
  *@n: required size to copy
- *Returns: pointer to dest
+ *Return: pointer to dest
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
