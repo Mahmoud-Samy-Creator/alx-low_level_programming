@@ -11,6 +11,9 @@ char *_strpbrk(char *s, char *accept)
 {
 	short accept_counter = 0;
 
+	if (*accept == '\0')
+		return (s);
+
 	while (*s != '\0')
 	{
 		while (*accept != '\0')
