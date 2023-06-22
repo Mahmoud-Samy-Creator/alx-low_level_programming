@@ -43,18 +43,18 @@ char *_strstr(char *haystack, char *needle)
 			return (haystack);
 
 		if (haystack[i] == needle[j])
-			{
-				j++;
-				i++;
-				k++;
-				continue;
-			}
+		{
+			j++;
+			i++;
+			k++;
+			continue;
+		}
 		else
-			{
-				i = 0;
-				j = 0;
-				k++;
-			}
+		{
+			i = 0;
+			j = 0;
+			k++;
+		}
 
 		if (k == _strlen(haystack))
 			return (NULL);
