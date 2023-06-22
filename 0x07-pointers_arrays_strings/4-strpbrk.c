@@ -13,6 +13,8 @@ char *_strpbrk(char *s, char *accept)
 
 	if (*accept == '\0')
 		return (s);
+	if (*s == '\0')
+		return (NULL);
 
 	while (*s != '\0')
 	{
