@@ -23,8 +23,8 @@ char *_strpbrk(char *s, char *accept)
 			else
 				return (s);
 		}
-		if (*accept == '\0')
-			accept -= accept_counter;
+		accept -= accept_counter;
+		accept_counter = 0;
 		s++;
 	}
 	return (NULL);
