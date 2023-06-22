@@ -32,7 +32,8 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i = 0, j = 0, k = 0;
 
-	printf("size: %d\n", _strlen(haystack));
+	/*printf("size: %d\n", _strlen(haystack));*/
+
 	if (!needle)
 		return (NULL);
 
