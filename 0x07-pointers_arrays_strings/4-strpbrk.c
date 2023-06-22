@@ -11,9 +11,10 @@ char *_strpbrk(char *s, char *accept)
 {
 	short accept_counter = 0;
 
-	if (*accept == '\0')
+	if (*accept == NULL)
 		return (s);
-	if (*s == '\0')
+
+	if (*s == NULL)
 		return (NULL);
 
 	while (*s != '\0')
