@@ -9,7 +9,6 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int result = 0;
 	short accept_counter = 0;
 
 	while (*s != '\0')
@@ -28,4 +27,5 @@ char *_strpbrk(char *s, char *accept)
 			accept -= accept_counter;
 		s++;
 	}
+	return (s);
 }
