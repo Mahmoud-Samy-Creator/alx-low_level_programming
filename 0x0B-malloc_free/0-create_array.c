@@ -1,32 +1,28 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-/*
- * create_array - function creates a string
- * @size: array size
- * @c: the specific character
- * Return: string
- *
+/**
+ *create_array - Entry point
+ *@size: size of the array
+ *@c: character
+ *Return: a pointer to the array, or NULL if it fails
  */
-
 char *create_array(unsigned int size, char c)
 {
-	unsigned int i = 0;
-	char *s = NULL;
+	char *array = NULL;
+	unsigned int i;
 
 	if (size == 0)
 		return (NULL);
-
-	s = (char *)malloc(size);
-	if (s == 0)
-		return (NULL);
-
-	while (i < size)
+	if (size != 0)
 	{
-		s[i] = c;
-		i++;
+		array = (char *)malloc(size * sizeof(char));
+		if (array != NULL)
+		{
+			for (i = 0; i < size; i++)
+				array[i] = c;
+		}
 	}
-
-	return (s);
+	return (array);
 }
