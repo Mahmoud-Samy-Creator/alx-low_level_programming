@@ -32,13 +32,13 @@ char *str_concat(char *s1, char *s2)
 
 	while (s1 && s1[i])
 	{
-		new[i] == s1[i];
+		new[i] = s1[i];
 		i++;
 	}
 
 	while (s2 && s2[i])
 	{
-		new[len1 + i] == s2[i];
+		new[len1 + i] = s2[i];
 		i++;
 	}
 
