@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdlib.h>
 /**
  * _strdup - A function to make a dupulicated string
  * @str: string of char
