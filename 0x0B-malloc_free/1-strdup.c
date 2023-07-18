@@ -1,35 +1,34 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
- * _strdup - copy
- * @str: pointer to string
- * Return: pointer
+ * _strdub - A function to make a dupulicated string
+ * @str: string of char
+ * Return - array of char
+ *
  */
 
-char *_strdup(char *str)
+char *_strdub(const char *str)
 {
+	int size = 0, i = 0;
+	char *dub = NULL;
 
-	char *new;
-	int len = 0;
-
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 
-	len = strlen(str);
+	while (str[size])
+		size++;
 
-	new = (char *)malloc(len * sizeof(char) + 1);
+	dub = (char *)malloc(size + 1);
 
-	if (new == NULL)
+	if (dub == NULL)
+		return (NULL);
+
+	while (str[i])
 	{
-		return (NULL);
+		dub[i] = str[i];
+		i++;
 	}
+	dub[i] = '\0';
 
-	else
-		strcpy(new, str);
-
-	return (new);
+	return (dub);
 }
-
