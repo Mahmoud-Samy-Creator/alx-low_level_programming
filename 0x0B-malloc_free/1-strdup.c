@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _strdub - A function to make a dupulicated string
+ * _strdup - A function to make a dupulicated string
  * @str: string of char
  * Return - array of char
  *
  */
 
-char *_strdub(const char *str)
+char *_strdup(const char *str)
 {
 	int size = 0, i = 0;
 	char *dub = NULL;
