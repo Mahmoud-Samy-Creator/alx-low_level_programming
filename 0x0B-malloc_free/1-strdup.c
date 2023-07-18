@@ -3,7 +3,7 @@
 /**
  * _strdup - A function to make a dupulicated string
  * @str: string of char
- * Return - array of char
+ * Return: array of char
  *
  */
 
