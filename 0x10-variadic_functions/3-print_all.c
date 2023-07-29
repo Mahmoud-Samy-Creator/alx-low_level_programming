@@ -36,10 +36,11 @@ void print_float(va_list args)
  * Return: nothing
  */
 
-
 void print_str(va_list args)
 {
-	printf("%s", va_arg(args, char *));
+	char *str = va_arg(args, char *);
+	
+	str == NULL ? printf("(nil)") : printf("%s", str);
 }
 
 /**
@@ -52,7 +53,7 @@ void print_all(const char * const format, ...)
 	long unsigned int i = 0, j = 0;
 	va_list args;
 	placeholders op[] = {
-		{'d', print_int},
+		{'i', print_int},
 		{'c', print_char},
 		{'f', print_float},
 		{'s', print_str}
@@ -62,17 +63,19 @@ void print_all(const char * const format, ...)
 
 	while (i < strlen(format))
 	{
+		j = 0;
 		while (j < 4)
 		{
 			if (format[i] == op[j].ch)
 			{
 				op[j].ptr(args);
-				j = 0;
-				break;
+				if (i < strlen(format) - 1)
+					printf(", ");
 			}
 			j++;
 		}
 		i++;
 	}
+	va_end(args);
 	printf("\n");
 }
