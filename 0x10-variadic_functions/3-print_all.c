@@ -39,7 +39,7 @@ void print_float(va_list args)
 void print_str(va_list args)
 {
 	char *str = va_arg(args, char *);
-	
+
 	str == NULL ? printf("(nil)") : printf("%s", str);
 }
 
@@ -50,7 +50,7 @@ void print_str(va_list args)
  */
 void print_all(const char * const format, ...)
 {
-	long unsigned int i = 0, j = 0;
+	unsigned long int i = 0, j = 0;
 	va_list args;
 	placeholders op[] = {
 		{'i', print_int},
@@ -61,7 +61,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (i < strlen(format))
+	while (format && format[i])
 	{
 		j = 0;
 		while (j < 4)
@@ -78,4 +78,6 @@ void print_all(const char * const format, ...)
 	}
 	va_end(args);
 	printf("\n");
+
+	}
 }
