@@ -3,6 +3,14 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+#include <string.h>
+
+typedef struct placeholders
+{
+	char ch;
+	void (*ptr)(va_list);
+} placeholders;
+
 
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
