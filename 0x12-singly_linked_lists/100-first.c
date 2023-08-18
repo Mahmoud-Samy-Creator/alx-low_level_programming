@@ -1,11 +1,11 @@
 #include <stdio.h>
-void startupfun (void) __attribute__ ((constructor));
+void startupfun(void) __attribute__ ((constructor));
 /**
- * startupdun - A function executes before main function
+ * startupfun - A function executes before main function
  * Return: void
  */
-
-void startupfun()
+void startupfun(void)
 {
-	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+printf("You're beat! and yet, you must allow,\n");
+printf("I bore my house upon my back!\n");
 }
