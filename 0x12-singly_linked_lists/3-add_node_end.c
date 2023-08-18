@@ -8,7 +8,7 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-    list_t *ptr, *new_node;
+	list_t *ptr, *new_node;
 	unsigned int length = 0;
 
 	if (!str)
