@@ -10,23 +10,23 @@ void free_listint2(listint_t **head)
 	listint_t *current, *next_node;
 
 	if (!head)
-    {
-        return;
-    }
+	{
+		return;
+	}
 
-    current = *head;
-    next_node = (*head)->next;
+	current = *head;
+	next_node = (*head)->next;
 
-    while (next_node)
-    {
-        free(current);
-        current = next_node;
-        next_node = next_node->next;
-    }
-    free(next_node);
-    free(current);
-    current = NULL;
-    next_node = NULL;
-    *head = NULL;
+	while (next_node)
+	{
+		free(current);
+		current = next_node;
+		next_node = next_node->next;
+	}
+	free(next_node);
+	free(current);
+	current = NULL;
+	next_node = NULL;
+	*head = NULL;
 
 }
