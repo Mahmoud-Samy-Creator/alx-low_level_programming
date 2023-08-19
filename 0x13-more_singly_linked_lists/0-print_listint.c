@@ -10,12 +10,6 @@ size_t print_listint(const listint_t *h)
 	size_t counter = 0;
 	const listint_t *ptr = h;
 
-	if (!h)
-	{
-		printf("No list\n");
-		return (0);
-	}
-
 	while (ptr)
 	{
 		printf("%d\n", ptr->n);
