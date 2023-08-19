@@ -20,9 +20,9 @@ void free_listint(listint_t *head)
 			current = next_node;
 			next_node = next_node->next;
 		}
-        free(next_node);
-        free(current);
-        current = NULL;
-        next_node = NULL;
+		free(next_node);
+		free(current);
+		current = NULL;
+		next_node = NULL;
 	}
 }
