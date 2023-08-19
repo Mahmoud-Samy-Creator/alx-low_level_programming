@@ -9,9 +9,6 @@ void free_listint2(listint_t **head)
 {
 	listint_t *current, *next_node;
 
-    if (!head)
-        return;
-
 	if (*head)
 	{
 		current = *head;
