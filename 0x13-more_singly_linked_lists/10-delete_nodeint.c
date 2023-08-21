@@ -1,41 +1,46 @@
 #include "lists.h"
 
 /**
- * delete_nodeint_at_index - A function to delete a specific node
- * @head: head to the first pointer
- * @index: Index of node to be deleted
- * Return: 1 if suceeded, - if fails
- */
-
+ * delete_nodeint_at_index - deletes the node at index of a listint_t list.
+ * @head: pointer to the list.
+ * @index: position of the node to delete.
+ * Return: 1 if it succeeded, -1 if it failed.
+ **/
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *current, *prev;
-	unsigned int i = 0;
+	listint_t *aux_node = *head;
+	listint_t *node_to_delete = *head;
+	unsigned int idx;
+	unsigned int cont = 0;
 
-	if ((*head) == NULL)
+	/* border case for empty list */
+	if (!(*head))
 		return (-1);
 
-	current = prev = *head;
-
+	/* border case for delete at the beginning */
 	if (index == 0)
 	{
-		*head = current->next;
-		free(current);
+		*head = node_to_delete->next;
+		free(node_to_delete);
 		return (1);
 	}
 
-	if (index != 0)
+	/* search of position to delete */
+	idx = index - 1;
+	while (aux_node && cont != idx)
 	{
-		for (; i < index - 1 ; i++)
-		{
-			prev = prev->next;
-		}
-		if (prev == NULL)
-			return (-1);
+		cont++;
+		aux_node = aux_node->next;
 	}
-	current = prev->next;
-	prev->next = current->next;
-	free(current);
 
-	return (1);
+	/* general case */
+	if (cont == idx && aux_node)
+	{
+		node_to_delete = aux_node->next;
+		aux_node->next = node_to_delete->next;
+		free(node_to_delete);
+		return (1);
+	}
+
+	return (-1);
 }
