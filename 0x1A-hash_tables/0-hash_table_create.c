@@ -12,7 +12,10 @@ hash_table_t *hash_table_create(unsigned long int size)
     /* Allocate memory for the new hash table*/
     hash_table_t *table = (hash_table_t*)malloc(sizeof(hash_table_t));
     if (!table)
+    {
+        fprintf(stderr, "Error: malloc failed\n");
         return (NULL);
+    }
     /* Assigning the table size*/
     table->size = size;
 
