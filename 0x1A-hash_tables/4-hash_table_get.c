@@ -6,6 +6,7 @@
  * @key: Key needed to get it's value
  * Return: the value
  */
+
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	int index = key_index((const unsigned char *)key, ht->size);
