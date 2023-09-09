@@ -62,7 +62,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			}
 			else
 			{
-				strcpy(ht->array[index]->value, value);
+				free(ht->array[index]->value);
+				ht->array[index]->value = strdup(value);
 				return (1);
 			}
 		}
