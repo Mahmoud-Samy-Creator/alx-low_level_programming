@@ -20,16 +20,18 @@ void free_item(hash_node_t *node)
 void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long int i = 0;
+    hash_node_t *node, *current;
 
-	for (i = 0 ; i < ht->size ; i++)
-	{
-		hash_node_t *node = ht->array[i];
-
-		if (node)
-		{
-			free(node);
-		}
-	}
-	free(ht->array);
-	free(ht);
+    for (i = 0 ; i < ht->size ; i++)
+    {
+        node = ht->array[i];
+        while(node)
+        {
+            current = node->next;
+            free(node);
+            node = current;
+        }
+    }
+    free(ht->array);
+    free(ht);
 }
