@@ -1,11 +1,9 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_print - A function to print a table datum
- * @ht: the table to print it's datum
- * Return: void
+ * hash_table_print - prints key/value pairs in hash table array order.
+ * @ht: the hash table.
  */
-
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i, count = 0;
@@ -13,18 +11,17 @@ void hash_table_print(const hash_table_t *ht)
 
 	if (ht == NULL)
 		return;
-
 	printf("{");
-	for (i = 0 ; i < ht->size ; i++)
+	for (i = 0; i < ht->size; i++)
 	{
-		if (ht->array[i])
+		if (ht->array[i] != NULL)
 		{
 			node = ht->array[i];
-			while (node)
+			while (node != NULL)
 			{
 				if (count > 0)
 					printf(", ");
-				printf("'%s':'%s'", node->key, node->value);
+				printf("'%s': '%s'", node->key, node->value);
 				node = node->next;
 				count++;
 			}
