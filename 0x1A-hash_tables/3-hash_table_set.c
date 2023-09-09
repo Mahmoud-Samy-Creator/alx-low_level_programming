@@ -35,7 +35,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	hash_node_t *node;
 
-	if (!ht || !key)
+	if (!ht || !key || strcmp(key, "") == 0)
 		return (0);
 
 	/* Create hash code for the key & determine the index */
