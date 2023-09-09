@@ -4,31 +4,32 @@
  * free_item - A function to free an item
  * @node: the item to be freed
  * Return: void
-*/
+ */
 
-void free_item(hash_node_t *item)
+void free_item(hash_node_t *node)
 {
-    free(item->key);
-    free(item->value);
-    free(item);
+	free(node->key);
+	free(node->value);
+	free(node);
 }
 /**
  * hash_table_delete - A function to free a hash table
  * @ht: Table to be freed
  * Return: void
-*/
+ */
 void hash_table_delete(hash_table_t *ht)
 {
-    unsigned long int i = 0;
+	unsigned long int i = 0;
 
-    for (i = 0 ; i < ht->size ; i++)
-    {
-        hash_node_t *node = ht->array[i];
-        if (node)
-        {
-            free(node);
-        }
-    }
-    free(ht->array);
-    free(ht);
+	for (i = 0 ; i < ht->size ; i++)
+	{
+		hash_node_t *node = ht->array[i];
+
+		if (node)
+		{
+			free(node);
+		}
+	}
+	free(ht->array);
+	free(ht);
 }
