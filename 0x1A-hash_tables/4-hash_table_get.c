@@ -6,21 +6,23 @@
  * @key: Key needed to get it's value
  * Return: the value
  */
-
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	int index = key_index((const unsigned char *)key, ht->size);
+	unsigned long int i = 0;
 	hash_node_t *array;
 
 	if (!ht)
 		return (NULL);
 
-	array = ht->array[index];
-	while (array)
+	for (i = 0 ; i < ht->size ; i++)
 	{
-		if (strcmp(array->key, key) == 0)
-			return (array->value);
-		array = array->next;
+		array = ht->array[i];
+		while (array)
+		{
+			if (strcmp(array->key, key) == 0)
+				return (array->value);
+			array = array->next;
+		}
 	}
 	return (NULL);
 }
