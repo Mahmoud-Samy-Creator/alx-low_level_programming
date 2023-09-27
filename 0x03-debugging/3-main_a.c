@@ -5,6 +5,7 @@
 * leap years into account
 * Return: 0
 */
+
 int main(void)
 {
 	int month;
