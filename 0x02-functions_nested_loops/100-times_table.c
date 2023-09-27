@@ -44,6 +44,7 @@ while (a <= n)
 			_putchar(' ');
 		}
 	}
+
 	_putchar('\n');
 	a++;
 }
