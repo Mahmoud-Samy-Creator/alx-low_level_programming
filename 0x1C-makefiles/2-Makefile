@@ -1,6 +1,6 @@
 CC = gcc
 SRC = main.c school.c
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:%.c=%.o)
 NAME = school
 
 all: $(NAME)
@@ -9,7 +9,7 @@ $(OBJ): $(SRC)
 	$(CC) -c $^
 
 $(NAME): $(OBJ)
-	$(CC) $^ -o $@
+	$(CC) -o $(OBJ) $(NAME)
 
 clean:
 	rm -f $(OBJ) $(NAME)
