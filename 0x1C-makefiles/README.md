@@ -22,14 +22,14 @@ Create your first Makefile.
 
 Requirements:
 
-* name of the executable: `holberton`
+* name of the executable: `school`
 * rules: `all`
 	* The `all` rule builds your executable
 * variables: none
 julien@ubuntu:~/0x1C. Makefiles$ make -f 0-Makefile 
-gcc main.c holberton.c -o holberton
+gcc main.c school.c -o school
 ```
-julien@ubuntu:~/0x1C. Makefiles$ ./holberton 
+julien@ubuntu:~/0x1C. Makefiles$ ./school 
 j#0000000000000000000000000000000000000
 j#000000000000000000@Q**g00000000000000
 j#0000000000000000*]++]4000000000000000
@@ -61,7 +61,7 @@ julien@ubuntu:~/0x1C. Makefiles$
 ### [1. make -f 1-Makefile](./1-Makefile)
 Requirements:
 
-* name of the executable: `holberton`
+* name of the executable: `school`
 * rules: `all`
 	* The `all` rule builds your executable
 * variables: `CC`, `SRC`
@@ -69,9 +69,9 @@ Requirements:
 	* `SRC`: the `.c` files
 ```
 julien@ubuntu:~/0x1C. Makefiles$ make -f 1-Makefile
-gcc main.c holberton.c -o holberton
+gcc main.c school.c -o school
 julien@ubuntu:~/0x1C. Makefiles$ make -f 1-Makefile
-gcc main.c holberton.c -o holberton
+gcc main.c school.c -o school
 julien@ubuntu:~/0x1C. Makefiles$
 ```
 
@@ -80,7 +80,7 @@ Create your first useful Makefile.
 
 Requirements:
 
-* name of the executable: `holberton`
+* name of the executable: `school`
 * rules: `all`
 	* The `all` rule builds your executable
 * variables: `CC`, `SRC`, `OBJ`, `NAME`
@@ -93,21 +93,21 @@ Requirements:
 ```
 julien@ubuntu:~/0x1C. Makefiles$ make -f 2-Makefile
 gcc    -c -o main.o main.c
-gcc    -c -o holberton.o holberton.c
-gcc main.o holberton.o -o holberton
+gcc    -c -o school.o school.c
+gcc main.o school.o -o school
 julien@ubuntu:~/0x1C. Makefiles$ make -f 2-Makefile
-gcc main.o holberton.o -o holberton
-julien@ubuntu:~/0x1C. Makefiles$ echo "/* Holberton */" >> main.c
+gcc main.o school.o -o school
+julien@ubuntu:~/0x1C. Makefiles$ echo "/* school */" >> main.c
 julien@ubuntu:~/0x1C. Makefiles$ make -f 2-Makefile
 gcc    -c -o main.o main.c
-gcc main.o holberton.o -o holberton
+gcc main.o school.o -o school
 julien@ubuntu:~/0x1C. Makefiles$ 
 ```
 
 ### [3. make -f 3-Makefile](./3-Makefile)
 Requirements:
 
-* name of the executable: `holberton`
+* name of the executable: `school`
 * rules: `all`, `clean`, `oclean`, `fclean`, `re`
 	* `all`: builds your executable
 	* `clean`: deletes all Emacs and Vim temporary files along with the executable
@@ -124,58 +124,58 @@ Requirements:
 * The `clean`, `oclean`, `fclean`, `re` rules should never fail
 * You are not allowed to have a list of all the `.o` files
 ```
-julien@ubuntu:~/holberton/curriculum_by_julien/holbertonschool-low_level_programming/0x1C. Makefiles$ ls -1
+julien@ubuntu:~/school/curriculum_by_julien/schoolschool-low_level_programming/0x1C. Makefiles$ ls -1
 0-Makefile
 1-Makefile
 2-Makefile
 3-Makefile
-holberton.c
+school.c
 main.c
 main.c~
 m.h
 julien@ubuntu:~/0x1C. Makefiles$ make -f 3-Makefile
 gcc    -c -o main.o main.c
-gcc    -c -o holberton.o holberton.c
-gcc main.o holberton.o -o holberton
+gcc    -c -o school.o school.c
+gcc main.o school.o -o school
 julien@ubuntu:~/0x1C. Makefiles$ make all -f 3-Makefile
-gcc main.o holberton.o -o holberton
+gcc main.o school.o -o school
 julien@ubuntu:~/0x1C. Makefiles$ ls -1
 0-Makefile
 1-Makefile
 2-Makefile
 3-Makefile
-holberton
-holberton.c
-holberton.o
+school
+school.c
+school.o
 main.c
 main.c~
 main.o
 m.h
 julien@ubuntu:~/0x1C. Makefiles$ make clean -f 3-Makefile 
-rm -f *~ holberton
+rm -f *~ school
 julien@ubuntu:~/0x1C. Makefiles$ make oclean -f 3-Makefile 
-rm -f main.o holberton.o
+rm -f main.o school.o
 julien@ubuntu:~/0x1C. Makefiles$ make fclean -f 3-Makefile 
-rm -f *~ holberton
-rm -f main.o holberton.o
+rm -f *~ school
+rm -f main.o school.o
 julien@ubuntu:~/0x1C. Makefiles$ make all -f 3-Makefile
 gcc    -c -o main.o main.c
-gcc    -c -o holberton.o holberton.c
-gcc main.o holberton.o -o holberton
+gcc    -c -o school.o school.c
+gcc main.o school.o -o school
 julien@ubuntu:~/0x1C. Makefiles$ make all -f 3-Makefile
-gcc main.o holberton.o -o holberton
+gcc main.o school.o -o school
 julien@ubuntu:~/0x1C. Makefiles$ make re -f 3-Makefile
-rm -f main.o holberton.o
+rm -f main.o school.o
 gcc    -c -o main.o main.c
-gcc    -c -o holberton.o holberton.c
-gcc main.o holberton.o -o holberton
+gcc    -c -o school.o school.c
+gcc main.o school.o -o school
 julien@ubuntu:~/0x1C. Makefiles$ 
 ```
 
 ### [4. A complete Makefile](./4-Makefile)
 Requirements:
 
-* name of the executable: `holberton`
+* name of the executable: `school`
 * rules: `all`, `clean`, `fclean`, `oclean`, `re`
 	* `all`: builds your executable
 	* `clean`: deletes all Emacs and Vim temporary files along with the executable
@@ -196,8 +196,8 @@ Requirements:
 ```
 julien@ubuntu:~/0x1C. Makefiles$ make all -f 4-Makefile
 gcc -Wall -Werror -Wextra -pedantic   -c -o main.o main.c
-gcc -Wall -Werror -Wextra -pedantic   -c -o holberton.o holberton.c
-gcc main.o holberton.o -o holberton
+gcc -Wall -Werror -Wextra -pedantic   -c -o school.o school.c
+gcc main.o school.o -o school
 julien@ubuntu:~/0x1C. Makefiles$ 
 ```
 
@@ -248,7 +248,7 @@ guillaume@ubuntu:~/0x1C$
 ### [6. make -f 100-Makefile](./100-Makefile)
 Requirements:
 
-* name of the executable: `holberton`
+* name of the executable: `school`
 * rules: `all`, `clean`, `fclean`, `oclean`, `re`
 	* `all`: builds your executable
 	* `clean`: deletes all Emacs and Vim temporary files along with the executable
