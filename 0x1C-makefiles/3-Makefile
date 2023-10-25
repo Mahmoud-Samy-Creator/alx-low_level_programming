@@ -5,17 +5,17 @@ NAME= school
 RM= rf -f
 
 all: $(NAME)
-NAME: $(OBJ)
-	$(CC) $(OBJ) -o ($NAME)
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) *.swap
+	$(RM) *~$(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
 fclean:
-	$(RM) $(OBJ) *.swap
+	clean oclean
 
-re: $(SRC)
-	$(CC) $(SRC) -o $(NAME)
+re:
+	oclean all
