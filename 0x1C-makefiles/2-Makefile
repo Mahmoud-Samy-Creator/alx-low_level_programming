@@ -10,3 +10,7 @@ $(OBJ): $(SRC)
 
 $(NAME): $(OBJ)
 	$(CC) $^ -o $@
+
+clean:
+	rm -f $(OBJ) $(NAME)
+
