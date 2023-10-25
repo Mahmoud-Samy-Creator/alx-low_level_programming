@@ -16,6 +16,7 @@ oclean:
 fclean:
 	clean
 	oclean
+	$(RM) $(NAME)
 
 re:
 	oclean
