@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * interpolation_search - Searches for a value in an array by interpolation search algorithm
+ * interpolation_search - interpolation_search algorithm
  * @array: A pointer to the first element of the array to search in
  * @size: number of elements in array
  * @value: value to search for
@@ -19,7 +19,8 @@ int interpolation_search(int *array, size_t size, int value)
 
 	while (low <= high && value >= array[low] && value <= array[high])
 	{
-		pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));
+		pos = low + (((double)(high - low) / (array[high] -
+						array[low])) * (value - array[low]));
 
 		printf("Value checked array[%d] = [%d]\n", pos, array[pos]);
 
@@ -33,7 +34,9 @@ int interpolation_search(int *array, size_t size, int value)
 			high = pos - 1;
 	}
 
-	pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));
+	pos = low + (((double)(high - low) / (array[high] -
+					array[low])) * (value - array[low]));
+
 	printf("Value checked array[%d] is out of range\n", pos);
 
 	return (-1);
