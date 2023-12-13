@@ -25,15 +25,13 @@ int min(int a, int b)
  */
 int binary_search_algo(int *array, int left, int right, int value)
 {
-	int  middle, counter;
+	int counter, mid;
 
 	if (!array)
 		return (-1);
 
-	while (left <= right)
+	if (right >= left)
 	{
-		middle = (left + right) / 2;
-
 		printf("Searching in array: ");
 		for (counter = left ; counter <= right ; counter++)
 		{
@@ -42,16 +40,17 @@ int binary_search_algo(int *array, int left, int right, int value)
 				printf(", ");
 		}
 		printf("\n");
+		mid = left + (right - left) / 2;
 
-		if (array[middle] == value)
-			return (middle);
+		if (array[mid] == value)
+			return (mid);
 
-		if (array[middle] < value)
-			left = middle + 1;
+		if (array[mid] > value)
+			return (binary_search_algo(array, left, mid - 1, value));
 
-		else
-			right = middle - 1;
+		return (binary_search_algo(array, mid + 1, right, value));
 	}
+
 	return (-1);
 }
 
@@ -78,9 +77,9 @@ int exponential_search(int *array, size_t size, int value)
 		i *= 2;
 	}
 
-	printf("Value found between indexes [%d] and [%d]\n", i / 2, (int)size - 1);
 	low = i / 2;
 	heigh = min(i, (int)size - 1);
 
+	printf("Value found between indexes [%d] and [%d]\n", i / 2, heigh);
 	return (binary_search_algo(array, low, heigh, value));
 }
