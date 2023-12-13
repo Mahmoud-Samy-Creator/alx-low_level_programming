@@ -13,8 +13,6 @@ int min(int a, int b)
 
 	else
 		return (b);
-
-	return (0);
 }
 
 /**
@@ -45,7 +43,7 @@ int binary_search_algo(int *array, int left, int right, int value)
 		}
 		printf("\n");
 
-		if (middle == value)
+		if (array[middle] == value)
 			return (middle);
 
 		if (array[middle] < value)
@@ -81,5 +79,5 @@ int exponential_search(int *array, size_t size, int value)
 	low = i / 2;
 	heigh = min(i, (int)size - 1);
 
-	return (binary_search_algo(array, low, heigh, size));
+	return (binary_search_algo(array, low, heigh, value));
 }
