@@ -12,9 +12,9 @@ int binarySearch(int *arr, int l, int r, int x)
 {
 	int mid, counter;
 
-    if (r >= l)
-    {
-        printf("Searching in array: ");
+	if (r >= l)
+	{
+		printf("Searching in array: ");
 		for (counter = l ; counter <= r ; counter++)
 		{
 			printf("%d", arr[counter]);
@@ -22,17 +22,17 @@ int binarySearch(int *arr, int l, int r, int x)
 				printf(", ");
 		}
 		printf("\n");
-        mid = l + (r - l) / 2;
+		mid = l + (r - l) / 2;
 
-    if (arr[mid] < x)
-            return (binarySearch(arr, mid + 1, r, x));
+		if (arr[mid] < x)
+			return (binarySearch(arr, mid + 1, r, x));
 
-    if (arr[mid - 1] == x)
-            return (binarySearch(arr, l, mid, x));
+		if (arr[mid - 1] == x)
+			return (binarySearch(arr, l, mid, x));
 
-    if (arr[mid] > x)
-            return (binarySearch(arr, l, mid, x));
-    
+		if (arr[mid] > x)
+			return (binarySearch(arr, l, mid, x));
+
 		return (mid);
 	}
 
@@ -40,7 +40,7 @@ int binarySearch(int *arr, int l, int r, int x)
 }
 
 /**
- * advanced_binary - Searches for a value in an array by Binary search algorithm
+ * advanced_binary - Searches value in an array by Binary search algorithm
  * @array: A pointer to the first element of the array to search in
  * @size: number of elements in array
  * @value: value to search for
@@ -48,13 +48,13 @@ int binarySearch(int *arr, int l, int r, int x)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-    int low, heigh;
+	int low, heigh;
 
-    if (!array)
-        return (-1);
+	if (!array)
+		return (-1);
 
-    low = 0;
-    heigh = size - 1;
+	low = 0;
+	heigh = size - 1;
 
-    return (binarySearch(array,  low,  heigh,  value));
+	return (binarySearch(array,  low,  heigh,  value));
 }
