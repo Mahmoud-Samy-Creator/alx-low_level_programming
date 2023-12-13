@@ -5,16 +5,16 @@
  * @a: num1
  * @b: num2
  * Return: Mininum number
-*/
+ */
 int min(int a, int b)
 {
-    if (a < b)
-        return (a);
+	if (a < b)
+		return (a);
 
-    else
-        return (b);
+	else
+		return (b);
 
-    return (0);
+	return (0);
 }
 
 /**
@@ -49,14 +49,10 @@ int binary_search_algo(int *array, int left, int right, int value)
 			return (middle);
 
 		if (array[middle] < value)
-		{
 			left = middle + 1;
-		}
 
 		else
-		{
 			right = middle - 1;
-		}
 	}
 	return (-1);
 }
@@ -70,20 +66,20 @@ int binary_search_algo(int *array, int left, int right, int value)
  */
 int exponential_search(int *array, size_t size, int value)
 {
-    int i = 1, low, heigh;
+	int i = 1, low, heigh;
 
-    if (array[0] == value)
-        return (0);
+	if (array[0] == value)
+		return (0);
 
-    while (i < (int)size && array[i] <= value)
-    {
-        printf("Value checked array[%d] = [%d]\n", i, array[i]);
-        i *= 2;
-    }
+	while (i < (int)size && array[i] <= value)
+	{
+		printf("Value checked array[%d] = [%d]\n", i, array[i]);
+		i *= 2;
+	}
 
-    printf("Value found between indexes [%d] and [%d]\n", i / 2, (int)size - 1);
-    low = i / 2;
-    heigh = min(i, (int)size - 1);
+	printf("Value found between indexes [%d] and [%d]\n", i / 2, (int)size - 1);
+	low = i / 2;
+	heigh = min(i, (int)size - 1);
 
-    return binary_search_algo(array, low, heigh, size);
+	return (binary_search_algo(array, low, heigh, size));
 }
